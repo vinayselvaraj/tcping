@@ -52,11 +52,11 @@ func (ping *HTTPing) Start() <-chan struct{} {
 				ping.result.Counter++
 
 				if err != nil {
-					fmt.Printf("Ping %s - failed: %s\n", ping.target, err)
+					//fmt.Printf("Ping %s - failed: %s\n", ping.target, err)
 				} else {
 					defer resp.Body.Close()
 					length, _ := io.Copy(ioutil.Discard, resp.Body)
-					fmt.Printf("Ping %s(%s) - %s is open - time=%s method=%s status=%d bytes=%d\n", ping.target, remoteAddr, ping.target.Protocol, duration, ping.Method, resp.StatusCode, length)
+					//fmt.Printf("Ping %s(%s) - %s is open - time=%s method=%s status=%d bytes=%d\n", ping.target, remoteAddr, ping.target.Protocol, duration, ping.Method, resp.StatusCode, length)
 					if ping.result.MinDuration == 0 {
 						ping.result.MinDuration = duration
 					}
