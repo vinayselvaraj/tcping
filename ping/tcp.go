@@ -48,7 +48,7 @@ func (tcping TCPing) Start() <-chan struct{} {
 					tcping.Stop()
 					return
 				}
-				duration, remoteAddr, err := tcping.ping()
+				duration, _, err := tcping.ping()
 				tcping.result.Counter++
 
 				if err != nil {
