@@ -1,7 +1,6 @@
 package ping
 
 import (
-	"fmt"
 	"net"
 	"time"
 )
